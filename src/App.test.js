@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { exportAllDeclaration } from '@babel/types';
 
-it('renders without crashing', () => {
+it('renders title and commentComponent', () => {
+
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
+
+  expect(div.innerHTML).toContain("Hi!");
+
   ReactDOM.unmountComponentAtNode(div);
 });
